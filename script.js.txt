@@ -1,0 +1,25 @@
+document.getElementById("registrationForm").addEventListener("submit", function (event) {
+  event.preventDefault(); // Prevent form reload
+
+  // Get values
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const phone = document.getElementById("phone").value;
+
+  // Create output HTML
+  const output = `
+    <h3>Submitted Data</h3>
+    <p><strong>Name:</strong> ${name}</p>
+    <p><strong>Email:</strong> ${email}</p>
+    <p><strong>Phone:</strong> ${phone}</p>
+  `;
+
+  // Display the data
+  document.getElementById("submittedData").innerHTML = output;
+});
+
+// Clear button functionality
+document.getElementById("clearBtn").addEventListener("click", function () {
+  document.getElementById("registrationForm").reset();
+  document.getElementById("submittedData").innerHTML = ""; // Clear displayed data
+});
